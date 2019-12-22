@@ -14,8 +14,7 @@ includes:
   - authentication
   - errors
   - installation
-  - customers
-  - events
-  - emaillogs
+  - sendemail
+  - sendevent
 
 ---
