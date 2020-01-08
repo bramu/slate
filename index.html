@@ -234,25 +234,9 @@
           </li>
           <li>
             <a href="#sendemail" class="toc-h1 toc-link" data-title="SendEmail">SendEmail</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#sendevent" class="toc-h1 toc-link" data-title="SendEvent">SendEvent</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
-                  </li>
-              </ul>
           </li>
       </ul>
   
@@ -405,10 +389,10 @@ $bbm-&gt;find("email@address.com");
 </code></p>
 </blockquote>
 
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>This endpoint used to send the email template to the specific user.</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>POST https://api.trusender.com/v1/sendEmail</code></p>
+<h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -417,14 +401,24 @@ $bbm-&gt;find("email@address.com");
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>auth_token</td>
+<td>None</td>
+<td>Token will be differnet for sandbox (test) and live environments and you should be able to get it from the settings page.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>email</td>
+<td>None</td>
+<td>Manadatory field, valid email address has to be there. Specified template will be send to this email address.</td>
+</tr>
+<tr>
+<td>template_name</td>
+<td>None</td>
+<td>Manadatory field, valid email address has to be there, this will be Handlebars template that can be created from the admin panel.</td>
+</tr>
+<tr>
+<td>data_mapping</td>
+<td>{}</td>
+<td>Dynamic fields those needs to be replaced in the Handlebars template</td>
 </tr>
 </tbody></table>
 
@@ -467,9 +461,9 @@ $bbm-&gt;find("email@address.com");
 </blockquote>
 
 <p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h4 id='http-request'>HTTP Request</h4>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
