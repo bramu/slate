@@ -52,11 +52,11 @@ import org.trusender.client;
 
 This endpoint retrieves all kittens.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://example.com/api/kittens`
 
-### Query Parameters
+#### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
